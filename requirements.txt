@@ -8,3 +8,5 @@ fastapi
 youtube-search
 uvicorn
 ffmpeg-python
+pydub
+PyNaCl
