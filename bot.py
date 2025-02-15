@@ -54,8 +54,10 @@ class MusicBot(commands.Bot):
             return {"status": "success", "message": "Canción agregada a la cola", "queue": self.music_queue}
 
         except Exception as e:
+            import traceback
+            error_trace = traceback.format_exc()
             print(f"Error al reproducir música: {e}")
-            return {"status": "error", "message": str(e)}
+            return {"status": "error", "message": str(e), "trace": error_trace}
 
     async def start_playing(self):
         while self.music_queue:
