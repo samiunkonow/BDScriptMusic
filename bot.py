@@ -37,7 +37,10 @@ class MusicBot(commands.Bot):
 
             # Buscar y obtener la URL del audio de YouTube
             extract = search_youtube(query)
+            print("url youtube: ", extract)
+
             url = get_youtube_audio_url(extract)
+            print("url stream: ", url)
 
             if not url:
                 raise ValueError("No se pudo obtener la URL del audio.")
