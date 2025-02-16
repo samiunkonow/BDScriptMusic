@@ -6,6 +6,7 @@ from MusicaBot.audio import get_youtube_audio_url
 from youtube_search import YoutubeSearch
 import os
 from dotenv import load_dotenv
+import json
 
 # Cargar variables de entorno desde el archivo .env
 load_dotenv()
