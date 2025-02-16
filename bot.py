@@ -2,8 +2,8 @@ import discord
 from discord.ext import commands
 import asyncio
 from MusicaBot.buscar import search_youtube
-from MusicaBot.audio import get_youtube_audio_url, info
-
+from MusicaBot.audio import get_youtube_audio_url
+from youtube_search import YoutubeSearch
 import os
 from dotenv import load_dotenv
 
