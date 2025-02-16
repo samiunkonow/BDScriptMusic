@@ -41,6 +41,8 @@ class MusicBot(commands.Bot):
 
             # Busca el audio de YouTube basado en la consulta
             extract = search_youtube(query)
+            info = search_youtube(query)
+
             url = get_youtube_audio_url(extract)
 
             if not url:
@@ -61,7 +63,7 @@ class MusicBot(commands.Bot):
 
             # Enviar respuesta JSON inmediatamente
             
-            return {"status": "success", "message": "Canción agregada a la cola", "queue": self.music_queue}
+            return {"status": "success", "message": "Canción agregada a la cola", "queue": self.music_queue, "info_music": info}
 
         except Exception as e:
             print(f"Error al reproducir música: {e}")
