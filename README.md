@@ -34,7 +34,7 @@ $httpResult
 
 **COOKIES**
 
-En caso de errores de cookies, edita el archivo de [cookies.txt](https://github.com/IzanaonYT/bdfd-music-2025-/blob/main/cookies.txt), y seguie el siguiente tutorial.
+En caso de errores de cookies, que despues de unos dias los cookies de este repositorio no funcionara, edita el archivo de [cookies.txt](https://github.com/IzanaonYT/bdfd-music-2025-/blob/main/cookies.txt), y sigue el siguiente tutorial.
 
 - Agrega la extensión [Get cookies.txt](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc)  en tu navegador LOCALMENTE
 - Haz clic derecho en el ícono de la extensión y haz clic en "Administrar extensión"
