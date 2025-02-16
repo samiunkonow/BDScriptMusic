@@ -32,7 +32,7 @@ $httpResult
 
 Advanced
 
-```
+```python
 $nomention
 $var[n;$message]
 
