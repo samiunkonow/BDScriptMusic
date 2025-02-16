@@ -19,7 +19,8 @@ Como desplegar el repositorio en Railway [click aqui..](https://streamable.com/9
 
 **BDFD**
 
-```
+Basic
+```python
 $var[json;{"user_id": "$authorID",
     "channel_id": "$channelID",
     "guild_id": "$guildID",
@@ -27,7 +28,6 @@ $var[json;{"user_id": "$authorID",
 
 $httpPost[YOUR URL HOST/play-music;$var[json]]
 $httpResult
-
 ```
 
 ## ERRORES
