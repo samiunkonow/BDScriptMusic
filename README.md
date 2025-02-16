@@ -33,7 +33,7 @@ Ayuda especial en el [Servidor de Soporte](https://discord.gg/aP27xXeAsS)
 Ayuda especial en el [Servidor de Soporte](https://discord.gg/aP27xXeAsS)
 
 
-# CODIGOS EXAMPLE [BDFD]
+## CODIGOS EXAMPLE [BDFD]
 
 ````python
 
