@@ -9,7 +9,7 @@ En cualquier diploy render, vercelapp o cualquiera establece las variable de ent
 
 ## TUTORIALES
 
-Como obtener el repositorio en tu perfil [click aqui..]()
+Como obtener el repositorio en tu perfil [click aqui..](https://streamable.com/1gigfp)
 
 Como desplegar el repositorio en Railway [click aqui..](https://streamable.com/9qtqhr)
 
