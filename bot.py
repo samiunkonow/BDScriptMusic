@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import asyncio
 from MusicaBot.buscar import search_youtube
-from MusicaBot.audio import get_youtube_audio_url
+from MusicaBot.audio import get_youtube_audio_url, info
 
 import os
 from dotenv import load_dotenv
@@ -41,7 +41,7 @@ class MusicBot(commands.Bot):
 
             # Busca el audio de YouTube basado en la consulta
             extract = search_youtube(query)
-            info = search_youtube(query)
+            info = info(query)
 
             url = get_youtube_audio_url(extract)
 
