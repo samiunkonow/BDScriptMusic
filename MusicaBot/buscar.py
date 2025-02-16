@@ -10,7 +10,10 @@ def search_youtube(query):
         return f"https://www.youtube.com/watch?v={video_id}"
     return None  # Retorna None si no hay resultados
 
-
+def info(query):
+    results = YoutubeSearch(query, max_results=1).to_json()
+    data = json.loads(results)
+    return data
 
 
 
