@@ -44,7 +44,5 @@ $var[json;{"user_id": "$authorID",
     "query": "company justin bieber"}]
 
 $httpPost[YOUR URL HOST/play-music;$var[json]]
-
-
 $httpResult
-```
+
