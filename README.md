@@ -5,7 +5,7 @@ BDFD (Bot Designer for Discord) permite a los desarrolladores crear bots persona
 
 ## MODIFICACIONES
 
-En cualquier diploy render, vercelapp o cualquiera establece las variable de entorno, esta variable de entorno tiene que tener como valor el token de tu bot de discord y como nombre `"DISCORD_TOKEN"`
+En cualquier diploy render, vercelapp o cualquiera establece las variable de entorno, esta variable de entorno tiene que tener como valor el token de tu bot de discord y como nombre `"DISCORD_TOKEN"`, de preferencia elige [Railway](https://railway.com)
 
 ## ERRORES
 
