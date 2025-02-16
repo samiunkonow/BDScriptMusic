@@ -9,9 +9,9 @@ En cualquier diploy render, vercelapp o cualquiera establece las variable de ent
 
 ## TUTORIALES
 
-Como obtener el repositorio en tu perfil [click aqui]..()
+Como obtener el repositorio en tu perfil [click aqui..]()
 
-Como desplegar el repositorio en Railway [click aqui]..()
+Como desplegar el repositorio en Railway [click aqui..]()
 
 
 ## ERRORES
