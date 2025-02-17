@@ -12,14 +12,16 @@ import json
 load_dotenv()
 
 class MusicBot(commands.Bot):
-    def __init__(self, token=None):
+    def __init__(self):
         super().__init__(command_prefix="!", intents=discord.Intents().all())
-        self.token = token
         self.voice_client = None
         self.music_queue = []  # Cola para almacenar las URLs de música
         self.is_playing = False  # Indicador de estado de reproducción
     
+
+
     async def play_music(self, user_id, channel_id, guild_id, query):
+
         try:
             print(f"Buscando audio para la consulta: {query}")
             guild = self.get_guild(int(guild_id))
@@ -27,6 +29,7 @@ class MusicBot(commands.Bot):
                 print("No se pudo encontrar el servidor.")
                 return "El bot no está en el servidor especificado."
             
+
             member = guild.get_member(int(user_id))
             if member is None:
                 print("El usuario no se encuentra en el servidor.")
@@ -42,6 +45,11 @@ class MusicBot(commands.Bot):
 
             results = YoutubeSearch(extract, max_results=1).to_json()
             data_url = json.loads(results)
+            
+
+
+
+            
 
             url = get_youtube_audio_url(extract)
 
@@ -62,6 +70,7 @@ class MusicBot(commands.Bot):
                 asyncio.create_task(self.start_playing())  # Reproducción en segundo plano
 
             # Enviar respuesta JSON inmediatamente
+            
             return {"status": "success", "message": "Canción agregada a la cola", "queue": self.music_queue, "info_music": data_url}
 
         except Exception as e:
@@ -69,9 +78,11 @@ class MusicBot(commands.Bot):
             return {"status": "error", "message": str(e)}
 
     async def start_playing(self):
+        # Maneja la reproducción de música en cola
         while self.music_queue:
             url = self.music_queue.pop(0)  # Obtiene la siguiente URL de la cola
 
+            # Opciones de FFmpeg mejoradas
             ffmpeg_options = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5',
                               'options': '-vn -loglevel panic'}
 
@@ -79,9 +90,11 @@ class MusicBot(commands.Bot):
             # Reproducir el audio
             self.voice_client.play(discord.FFmpegPCMAudio(url, **ffmpeg_options), after=self.check_queue)
 
+            # Espera hasta que termine la reproducción
             while self.voice_client.is_playing():
                 await asyncio.sleep(1)
 
+        # Desconectar después de que se haya terminado la cola
         if self.voice_client:
             await self.voice_client.disconnect()
             self.voice_client = None
@@ -90,19 +103,15 @@ class MusicBot(commands.Bot):
     def check_queue(self, error=None):
         if error:
             print(f"Error en la reproducción: {error}")
+        # Llama a start_playing para reproducir la siguiente canción en la cola
         if self.music_queue:
             asyncio.create_task(self.start_playing())
 
     async def show_queue(self):
-        return self.music_queue
+        return self.music_queue  # Devuelve la cola actual
 
     async def on_ready(self):
         print(f"Bot conectado como {self.user} en el servidor.")
-
-    async def start_bot(self):
-        if self.token:
-            await self.start(self.token)
-
 
     async def start_bot(self):
         # Inicia el bot
