@@ -10,3 +10,4 @@ uvicorn
 ffmpeg-python
 pydub
 PyNaCl
+asyncio
